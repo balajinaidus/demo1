@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Document</title>
+</head>
+<body>
+    <input id="sec">
+    <input id="min">
+    <input type="button" value="click here!" onclick="collectValue()">
+    <script>
+     function collectValue()
+     {
+          var minFromUser=document.getElementById("min").value
+          function countMin()
+          {
+               if(minFromUser>0)
+               {
+                    var sec=60
+                    minFromUser--
+                    document.getElementById("min").value=minFromUser
+                    var a=setTimeout(countMin,60000)
+                    function countSec()
+                    {
+                         if(sec>0)
+                         {
+                              sec--
+                              document.getElementById("sec").value=sec
+                              var b=setTimeout(countSec,1000)
+
+                         }
+                    }
+                    countSec()
+               }
+          }
+          countMin()
+     }
+    </script>
+</body>
+</html>
